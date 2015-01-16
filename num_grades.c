@@ -13,7 +13,7 @@ int main(int argc, const char* argv[])
 {
     if (argc < 2) // Check that there was an entry
     {
-        printf("Must enter a number on the command line!\n");
+        printf("Must enter one or more grades on the command line!\n");
         return 1; // Indicate failure
     }
     
