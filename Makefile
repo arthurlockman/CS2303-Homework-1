@@ -13,11 +13,11 @@ num.o:
 	gcc -c num.c
 
 num_grades: num_grades.o
-	gcc num_grades.o -o num_grades
+	gcc num_grades.o gpa_calc.o -o num_grades
 
-num_grades.o:
-	gcc -c num_grades.c
+num_grades.o: num_grades.c gpa_calc.c
+	gcc -c num_grades.c gpa_calc.c
 
 clean:
-	rm -f Lab1.o Lab1 num.o num num_grades.o num_grades
+	rm -f Lab1 num num_grades *.o
 

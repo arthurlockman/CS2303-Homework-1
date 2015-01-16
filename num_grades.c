@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "gpa_calc.h"
 
 /* This program reads in a number of student grades from the command line. 
  * Usage:
@@ -7,8 +8,6 @@
  * Example:
  *      ./num_grades 95 97 83 84
  */
-
-int averageGrade(int grades[], int numGrades);
 
 int main(int argc, const char* argv[])
 {
@@ -36,16 +35,5 @@ int main(int argc, const char* argv[])
  
     printf("Class GPA: %d\n", gpa);
     return 0; // Indicate success!
-}
-
-int averageGrade(int grades[], int numGrades)
-{
-    int i;
-    int gpa = 0;
-    for (i = 0; i < numGrades; i++)
-    {
-        gpa += grades[i];    
-    }
-    return (int)((float)gpa / (float)numGrades);
 }
 
