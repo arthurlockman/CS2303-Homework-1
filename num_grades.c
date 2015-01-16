@@ -8,6 +8,8 @@
  *      ./num_grades 95 97 83 84
  */
 
+int averageGrade(int grades[], int numGrades);
+
 int main(int argc, const char* argv[])
 {
     if (argc < 2) // Check that there was an entry
@@ -30,6 +32,20 @@ int main(int argc, const char* argv[])
         numberOfGrades++;
     }
 
+    int gpa = averageGrade(grades, numberOfGrades);
+ 
+    printf("Class GPA: %d\n", gpa);
     return 0; // Indicate success!
+}
+
+int averageGrade(int grades[], int numGrades)
+{
+    int i;
+    int gpa = 0;
+    for (i = 0; i < numGrades; i++)
+    {
+        gpa += grades[i];    
+    }
+    return (int)((float)gpa / (float)numGrades);
 }
 
