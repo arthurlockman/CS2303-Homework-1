@@ -31,9 +31,6 @@ int main(int argc, const char* argv[])
         numberOfGrades++;
     }
 
-    int gpa = averageGrade(grades, numberOfGrades);
- 
-    printf("Class GPA: %d\n", gpa);
-    return 0; // Indicate success!
+    return averageGrade(grades, numberOfGrades); // Indicate success!
 }
 

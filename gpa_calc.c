@@ -1,4 +1,5 @@
 #include "gpa_calc.h"
+#include <stdio.h>
 
 /**
  * @brief Average the class grades.
@@ -11,10 +12,16 @@ int averageGrade(int grades[], int numGrades)
 {
     int i;
     int gpa = 0;
+    int highest = 0;
+    int lowest = 100;
     for (i = 0; i < numGrades; i++)
     {
+        (grades[i] < lowest) ? lowest = grades[i] : 1;
+        (grades[i] > highest) ? highest = grades[i] : 1;
         gpa += grades[i];    
     }
-    return (int)((float)gpa / (float)numGrades);
+    gpa = (int)((float)gpa / (float)numGrades);
+    printf("GPA: %d\nHighest: %d\nLowest: %d\n", gpa, highest, lowest);
+    return 0;
 }
 
