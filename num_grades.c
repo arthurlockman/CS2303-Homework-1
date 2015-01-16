@@ -22,7 +22,8 @@ int main(int argc, const char* argv[])
     /* Loop iterates once for each grade entered on the command line. 
      * It terminates once each grade entered has been stored into the grades array.
      */
-    for (int i = 1; i <= argc - 1; i++)
+    int i; //loop iteration counter
+    for (i = 1; i <= argc - 1; i++)
     {
         grades[i-1] = atoi(argv[i]); //store grade in array
         printf("Grade: %d\n", grades[i-1]);
