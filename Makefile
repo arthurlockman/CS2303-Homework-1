@@ -3,7 +3,7 @@ all: Lab1 num num_grades
 Lab1: Lab1.o
 	gcc Lab1.o -o Lab1
 
-Lab1.o:
+Lab1.o: Lab1.c
 	gcc -c Lab1.c
 
 num: num.o
