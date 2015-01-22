@@ -1,6 +1,19 @@
-/* Example C Program for CS2303 Lab 1 */
+/** 
+ * @file Lab1.c
+ * @brief CS 2303 Lab 1 Code
+ * @author Arthur Lockman
+ * @version 1.0.0
+ * @date 2015-01-21
+ */
 #include <stdio.h>
 
+/** 
+ * @brief The main function for this lab.
+ *
+ * This functionprints the numbers 1 through 17, then exits.
+ * 
+ * @return nothing.
+ */
 int main()
 {
     int i; //Loop counter

@@ -1,15 +1,26 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include "gpa_calc.h"
-
-/* This program reads in a number of student grades from the command line and finds the
+/** 
+ * @file num_grades.c
+ * @brief This program reads in a number of student grades from the command line and finds the
  * smallest and largest grade, as well as the GPA of the entered grades. 
  * Usage:
  *      ./num_grades [grade 1] [grade 2] ... [grade n]
  * Example:
  *      ./num_grades 95 97 83 84
+ *  
+ * @author Arthur Lockman
+ * @version 1.0.0
+ * @date 2015-01-22
  */
+#include <stdio.h>
+#include <stdlib.h>
+#include "gpa_calc.h"
 
+/** 
+ * @brief The main function. Reads the numbers and performs calculations 
+ * using external gpa_calc library.
+ * 
+ * @return 0 if no errors. 
+ */
 int main(int argc, const char* argv[])
 {
     if (argc < 2) // Check that there was an entry
