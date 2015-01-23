@@ -15,7 +15,7 @@ num.o:
 num_grades: num_grades.o
 	gcc num_grades.o gpa_calc.o -o num_grades
 
-num_grades.o: num_grades.c gpa_calc.c
+num_grades.o: num_grades.c gpa_calc.c gpa_calc.h
 	gcc -c num_grades.c gpa_calc.c
 
 clean:
