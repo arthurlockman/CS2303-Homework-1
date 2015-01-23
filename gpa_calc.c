@@ -11,7 +11,7 @@
 int averageGrade(int grades[], int numGrades)
 {
     int i;
-    int gpa = 0;
+    double gpa = 0;
     int highest = 0;
     int lowest = 100;
     for (i = 0; i < numGrades; i++)
@@ -20,8 +20,8 @@ int averageGrade(int grades[], int numGrades)
         (grades[i] > highest) ? highest = grades[i] : 1;
         gpa += grades[i];    
     }
-    gpa = (int)((float)gpa / (float)numGrades);
-    printf("GPA: %d\nHighest: %d\nLowest: %d\n", gpa, highest, lowest);
+    gpa = (double)gpa / (double)numGrades;
+    printf("GPA: %f\nHighest: %d\nLowest: %d\n", gpa, highest, lowest);
     return 0;
 }
 

@@ -15,6 +15,8 @@
 #include <stdlib.h>
 #include "gpa_calc.h"
 
+#define MAX_GRADES 20
+
 /** 
  * @brief The main function. Reads the numbers and performs calculations 
  * using external gpa_calc library.
@@ -27,22 +29,24 @@ int main(int argc, const char* argv[])
     {
         printf("Must enter one or more grades on the command line!\n");
         return 1; // Indicate failure
+    } else if (argc - 1 > MAX_GRADES)
+    {
+        printf("Too many grades input! Truncating to %d grades.\n", MAX_GRADES);
     }
     
-    int grades[argc - 1]; //initialize grades array with enough elements to hold all inputs
-    int numberOfGrades = 0; //initialize var to hold the number of grades entered
+    int grades[MAX_GRADES]; //initialize grades array with enough elements to hold all inputs
+    int numberOfGrades = (argc-1 > MAX_GRADES) ? MAX_GRADES : argc - 1; //initialize var to hold the number of grades entered
+    printf("Grades entered: %d\n", numberOfGrades); 
     
     /* Loop iterates once for each grade entered on the command line. 
      * It terminates once each grade entered has been stored into the grades array.
      */
     int i; //loop iteration counter
-    for (i = 1; i <= argc - 1; i++)
+    for (i = 1; i <= numberOfGrades; i++)
     {
         grades[i-1] = atoi(argv[i]); //store grade in array
         printf("Grade: %d\n", grades[i-1]);
-        numberOfGrades++;
     }
-
     return averageGrade(grades, numberOfGrades); // Indicate success!
 }
 
